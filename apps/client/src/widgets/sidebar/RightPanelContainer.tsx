@@ -15,6 +15,7 @@ import Button from "../react/Button";
 import { useActiveNoteContext, useLegacyWidget, useNoteProperty, useTriliumEvent, useTriliumOptionJson } from "../react/hooks";
 import NoItems from "../react/NoItems";
 import LegacyRightPanelWidget from "../right_panel_widget";
+import AiAssistPanel from "./AiAssistPanel";
 import HighlightsList from "./HighlightsList";
 import PdfAttachments from "./pdf/PdfAttachments";
 import PdfLayers from "./pdf/PdfLayers";
@@ -97,6 +98,10 @@ function useItems(rightPaneVisible: boolean, widgetsByParent: WidgetsByParent) {
             el: <SidebarChat />,
             enabled: noteType !== "llmChat" && isExperimentalFeatureEnabled("llm"),
             position: 1000
+        },
+        {
+            el: <AiAssistPanel />,
+            enabled: (noteType === "text" || noteType === "code") && isExperimentalFeatureEnabled("llm"),
         },
         ...widgetsByParent.getLegacyWidgets("right-pane").map((widget) => ({
             el: <CustomLegacyWidget key={widget._noteId} originalWidget={widget as LegacyRightPanelWidget} />,

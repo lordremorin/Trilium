@@ -25,6 +25,7 @@ import FindWidget from "../widgets/find.js";
 import FloatingButtons from "../widgets/FloatingButtons.jsx";
 import { DESKTOP_FLOATING_BUTTONS } from "../widgets/FloatingButtonsDefinitions.jsx";
 import HighlightsListWidget from "../widgets/highlights_list.js";
+import AiAssistPanelWidget from "../widgets/ai_assist_panel.js";
 import LauncherContainer from "../widgets/launch_bar/LauncherContainer.jsx";
 import SpacerWidget from "../widgets/launch_bar/SpacerWidget.jsx";
 import InlineTitle from "../widgets/layout/InlineTitle.jsx";
@@ -178,6 +179,7 @@ export default class DesktopLayout {
                                         new RightPaneContainer()
                                             .child(new TocWidget())
                                             .child(new HighlightsListWidget())
+                                            .child(new AiAssistPanelWidget())
                                             .child(...this.customWidgets.get("right-pane"))
                                     )
                                     .optChild(isNewLayout, <RightPanelContainer widgetsByParent={this.customWidgets} />)

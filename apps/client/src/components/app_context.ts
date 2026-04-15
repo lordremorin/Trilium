@@ -94,6 +94,7 @@ export type CommandMappings = {
     };
     closeTocCommand: CommandData;
     closeHlt: CommandData;
+    closeAiAssist: CommandData;
     showLaunchBarSubtree: CommandData;
     showHiddenSubtree: CommandData;
     showSQLConsoleHistory: CommandData;
@@ -442,6 +443,9 @@ type EventMappings = {
         noteId: string | undefined;
     };
     showHighlightsListWidget: {
+        noteId: string;
+    };
+    showAiAssistWidget: {
         noteId: string;
     };
     showTocWidget: {

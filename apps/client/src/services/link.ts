@@ -52,6 +52,7 @@ export interface ViewScope {
     highlightsListPreviousVisible?: boolean;
     highlightsListTemporarilyHidden?: boolean;
     tocTemporarilyHidden?: boolean;
+    aiAssistTemporarilyHidden?: boolean;
     /*
      * The reason for adding tocPreviousVisible is to record whether the previous state of the toc is hidden or displayed,
      * and then let it be displayed/hidden at the initial time. If there is no such value,
